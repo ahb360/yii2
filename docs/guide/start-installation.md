@@ -1,7 +1,7 @@
 Installing Yii
 ==============
 
-You can install Yii in two ways, using [Composer](http://getcomposer.org/) or by downloading an archive file.
+You can install Yii in two ways, using the [Composer](http://getcomposer.org/) package manager or by downloading an archive file.
 The former is the preferred way, as it allows you to install new [extensions](structure-extensions.md) or update Yii by simply running a single command.
 
 Standard installations of Yii result in both the framework and an application template being downloaded and installed.
@@ -185,7 +185,7 @@ server {
     root        /path/to/basic/web;
     index       index.php;
 
-    access_log  /path/to/basic/log/access.log main;
+    access_log  /path/to/basic/log/access.log;
     error_log   /path/to/basic/log/error.log;
 
     location / {
@@ -200,7 +200,8 @@ server {
     #error_page 404 /404.html;
 
     location ~ \.php$ {
-        include fastcgi.conf;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root/$fastcgi_script_name;
         fastcgi_pass   127.0.0.1:9000;
         #fastcgi_pass unix:/var/run/php5-fpm.sock;
         try_files $uri =404;

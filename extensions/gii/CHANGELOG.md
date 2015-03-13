@@ -1,10 +1,16 @@
 Yii Framework 2 gii extension Change Log
 ========================================
 
-2.0.3 under development
+2.0.4 under development
 -----------------------
 
-- no changes in this release.
+- Bug #6667: Gii form generator rendering mistake view (pana1990)
+
+
+2.0.3 March 01, 2015
+--------------------
+
+- Chg #7328: Changed the way CRUD generator translates "Create X". Now it's a whole string because of translation difficulties (samdark)
 
 
 2.0.2 January 11, 2015
